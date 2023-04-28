@@ -55,7 +55,7 @@ func clear_cookies( context *fiber.Ctx ) {
 }
 
 // POST http://localhost:5950/admin/login
-func HandleLogin( context *fiber.Ctx ) ( error ) {
+func Login( context *fiber.Ctx ) ( error ) {
 	valid_login := validate_login_credentials( context )
 	if valid_login == false { return serve_failed_attempt( context ) }
 	clear_cookies( context )

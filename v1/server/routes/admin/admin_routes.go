@@ -23,6 +23,11 @@ func RegisterRoutes( fiber_app *fiber.App , config *types.ConfigFile ) {
 
 	// API Routes
 	admin_route_group.Get( "/logout" , Logout )
-	admin_route_group.Post( "/login" , HandleLogin )
+	admin_route_group.Post( "/login" , Login )
+
+	fiber_app.Get( "/l/:uuid/:message" , LogMessage )
+	fiber_app.Get( "/v/:uuid" , LogViewMessages )
+	// fiber_app.Post( "/l/:uuid" , LogObject )
 
 }
+
